@@ -674,3 +674,42 @@ const scorers = {};
 for (const player of game2.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
+
+//Set
+const orderSet = new Set(["Pizza", "Pasta", "Risotto", "Pasta", "Pizza"]);
+console.log(orderSet);
+
+console.log(new Set("Martins"));
+
+//we can know the size of a set by below code.
+console.log(orderSet.size);
+
+//to check if certain element is in a set, we use has method as in code below.
+console.log(orderSet.has("cake")); // this will print false
+console.log(orderSet.has("pizza")); //this will print true
+
+//we can also add new element to a set with add() method.
+orderSet.add("Garlic Bread");
+orderSet.add("Garlic Bread");
+console.log(orderSet);
+
+//we can also delete an element from a set with delete() method.
+orderSet.delete("Risotto");
+console.log(orderSet);
+
+//set are also iterable, therefore we can loop over them.
+for (const order of orderSet) console.log(order);
+// we can aslo clear all the element of a set with clear() method, this will clear every
+//elements of the set.
+orderSet.clear();
+console.log(orderSet);
+
+//example of usecase of set.
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"]).size
+);
+
+console.log(new Set("Abiolamartins").size);
